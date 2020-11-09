@@ -1,13 +1,15 @@
 !# /usr/bin/env ruby
 
 require_relative 'bike'
+require_relative 'storage'
 
-bike = Bike.new(1, :pink, 99.99)
+storage = Storage.new()
+bike = Bike.new(1, :pink, 99.99, storage)
 
-bike.add_cargo(:apples)
-bike.add_cargo(:water)
-bike.add_cargo(:repair_kit)
+storage.add_cargo(:apples)
+storage.add_cargo(:water)
+storge.add_cargo(:repair_kit)
 
-puts "Space for #{bike.pannier_remaining_capacity} items left."
+puts "Space for #{storage.pannier_remaining_capacity} items left."
 
 bike.rent!
