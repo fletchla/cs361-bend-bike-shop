@@ -15,4 +15,12 @@ class Bike
     @luggage = Luggage.new(Luggage::DEFAULT_MAX_CAPACITY, extra_items, self)
   end
 
+  def get_price()
+    self.price + self.get_total_weight() * 2
+  end
+
+  def get_total_weight()
+    self.weight + self.luggage.weight
+  end
+
 end
